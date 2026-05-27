@@ -40,19 +40,19 @@ SPONSORS = {
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="index.html")
 
 @app.get("/option-a", response_class=HTMLResponse)
 async def option_a(request: Request):
-    return templates.TemplateResponse("option_a.html", {"request": request, "sponsors": SPONSORS})
+    return templates.TemplateResponse(request=request, name="option_a.html", context={"sponsors": SPONSORS})
 
 @app.get("/option-b", response_class=HTMLResponse)
 async def option_b(request: Request):
-    return templates.TemplateResponse("option_b.html", {"request": request, "sponsors": SPONSORS})
+    return templates.TemplateResponse(request=request, name="option_b.html", context={"sponsors": SPONSORS})
 
 @app.get("/option-c", response_class=HTMLResponse)
 async def option_c(request: Request):
-    return templates.TemplateResponse("option_c.html", {"request": request, "sponsors": SPONSORS})
+    return templates.TemplateResponse(request=request, name="option_c.html", context={"sponsors": SPONSORS})
 
 if __name__ == "__main__":
     import uvicorn
