@@ -30,20 +30,26 @@
     display:inline-block;
     font-size:10px; font-weight:600; letter-spacing:1.5px;
     text-transform:uppercase; color:#999;
-    margin-bottom:8px; margin-left:4px;
+    margin-bottom:10px; margin-left:4px;
   }
-  .logos { display:flex; flex-wrap:wrap; gap:0; justify-content:center; }
+  .logos { display:flex; flex-wrap:wrap; gap:4px; justify-content:center; }
   .logo {
     display:inline-flex; align-items:center; justify-content:center;
-    padding:8px 18px; margin:3px;
-    font-weight:600; color:#222; text-decoration:none;
-    border-radius:4px; transition:background 0.15s;
+    padding:6px 14px; margin:2px;
+    text-decoration:none; border-radius:4px;
+    transition:background 0.15s;
   }
   .logo:hover { background:#eef1f5; }
-  .tier--platinum .logo { font-size:16px; padding:10px 22px; }
-  .tier--gold .logo { font-size:14px; }
-  .tier--silver .logo { font-size:12.5px; color:#444; }
-  .tier--bronze .logo { font-size:11.5px; color:#666; }
+  .logo img { object-fit:contain; }
+  .logo .fallback { font-weight:600; color:#222; }
+  .tier--platinum .logo img { height:28px; }
+  .tier--platinum .logo .fallback { font-size:16px; }
+  .tier--gold .logo img { height:22px; }
+  .tier--gold .logo .fallback { font-size:14px; }
+  .tier--silver .logo img { height:18px; }
+  .tier--silver .logo .fallback { font-size:12.5px; color:#444; }
+  .tier--bronze .logo img { height:15px; }
+  .tier--bronze .logo .fallback { font-size:11.5px; color:#666; }
 
   .divider { width:100%; height:1px; background:#e8e8e8; margin:4px 0; }
 
@@ -75,7 +81,10 @@
     <div class="tier-tag">{{ tier_name | capitalize }}</div>
     <div class="logos">
       {% for s in sponsors[tier_name] %}
-      <a href="{{ s.url }}" class="logo" target="_blank">{{ s.name }}</a>
+      <a href="{{ s.url }}" class="logo" target="_blank">
+        <img src="{{ s.logo }}" alt="{{ s.name }}" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';">
+        <span class="fallback" style="display:none;">{{ s.name }}</span>
+      </a>
       {% endfor %}
     </div>
   </div>

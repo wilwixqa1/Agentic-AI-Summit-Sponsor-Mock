@@ -37,20 +37,31 @@
     background:rgba(255,255,255,0.04);
     border:1px solid rgba(255,255,255,0.08);
     border-radius:10px;
-    font-weight:600; color:#d4d4d4; text-decoration:none;
+    text-decoration:none; color:#d4d4d4;
     transition:all 0.2s;
   }
   .logo:hover {
     background:rgba(255,255,255,0.08);
     border-color:rgba(253,181,21,0.3);
-    color:#fff;
     transform:translateY(-1px);
     box-shadow:0 4px 20px rgba(253,181,21,0.08);
   }
-  .tier--platinum .logo { padding:14px 28px; font-size:16px; min-width:160px; }
-  .tier--gold .logo { padding:10px 22px; font-size:14px; min-width:130px; }
-  .tier--silver .logo { padding:8px 18px; font-size:12.5px; }
-  .tier--bronze .logo { padding:7px 16px; font-size:11.5px; }
+  .logo img { object-fit:contain; filter:brightness(0) invert(0.85); transition:filter 0.2s; }
+  .logo:hover img { filter:brightness(0) invert(1); }
+  .logo .fallback { font-weight:600; text-align:center; }
+
+  .tier--platinum .logo { padding:14px 28px; min-width:160px; }
+  .tier--platinum .logo img { height:30px; }
+  .tier--platinum .logo .fallback { font-size:16px; }
+  .tier--gold .logo { padding:10px 22px; min-width:130px; }
+  .tier--gold .logo img { height:24px; }
+  .tier--gold .logo .fallback { font-size:14px; }
+  .tier--silver .logo { padding:8px 18px; }
+  .tier--silver .logo img { height:18px; }
+  .tier--silver .logo .fallback { font-size:12.5px; }
+  .tier--bronze .logo { padding:7px 16px; }
+  .tier--bronze .logo img { height:15px; }
+  .tier--bronze .logo .fallback { font-size:11.5px; }
 
   .cta {
     text-align:center; margin-top:36px;
@@ -83,7 +94,10 @@
     <div class="tier-badge">{{ tier_name | capitalize }}</div>
     <div class="logos">
       {% for s in sponsors[tier_name] %}
-      <a href="{{ s.url }}" class="logo" target="_blank">{{ s.name }}</a>
+      <a href="{{ s.url }}" class="logo" target="_blank">
+        <img src="{{ s.logo }}" alt="{{ s.name }}" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';">
+        <span class="fallback" style="display:none;">{{ s.name }}</span>
+      </a>
       {% endfor %}
     </div>
   </div>
