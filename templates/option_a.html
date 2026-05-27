@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Option A — Conference Classic</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'Source Sans Pro', sans-serif; background: #fff; color: #1a1a2e; }
+
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:12px 24px; background:#003262; }
+  .nav a { color:#fff; text-decoration:none; font-size:13px; font-weight:600; opacity:0.8; }
+  .nav a:hover { opacity:1; }
+  .nav .title { color:#fdb515; font-size:14px; font-weight:700; }
+
+  .wrap { max-width:920px; margin:0 auto; padding:48px 24px 52px; }
+  h2 { text-align:center; font-size:26px; font-weight:700; color:#003262; margin-bottom:6px; }
+  .sub { text-align:center; color:#666; font-size:14px; margin-bottom:36px; }
+
+  .tier { margin-bottom:24px; }
+  .tier-head { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+  .tier-head span { font-size:11px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; white-space:nowrap; }
+  .tier-head hr { flex:1; border:none; border-top:1px solid #e0e0e0; }
+  .tier--platinum .tier-head span { color:#6b7280; }
+  .tier--gold .tier-head span { color:#b8860b; }
+  .tier--silver .tier-head span { color:#71717a; }
+  .tier--bronze .tier-head span { color:#92400e; }
+
+  .logos { display:flex; flex-wrap:wrap; justify-content:center; gap:6px; }
+  .logo {
+    display:flex; align-items:center; justify-content:center;
+    background:#fff; border:1px solid #e2e5ea; border-radius:8px;
+    text-decoration:none; color:#1a1a2e; font-weight:700;
+    transition: box-shadow 0.2s, transform 0.15s;
+  }
+  .logo:hover { box-shadow:0 4px 14px rgba(0,0,0,0.07); transform:translateY(-1px); }
+  .tier--platinum .logo { width:172px; height:68px; font-size:16px; }
+  .tier--gold .logo { width:148px; height:58px; font-size:14.5px; }
+  .tier--silver .logo { width:130px; height:50px; font-size:13px; }
+  .tier--bronze .logo { width:118px; height:44px; font-size:12px; }
+
+  .cta { text-align:center; margin-top:32px; padding-top:24px; border-top:1px solid #e2e5ea; }
+  .cta p { color:#666; font-size:14px; margin-bottom:12px; }
+  .cta a.btn {
+    display:inline-block; background:#003262; color:#fff;
+    font-weight:600; font-size:13px; padding:10px 26px;
+    border-radius:6px; text-decoration:none; transition:background 0.2s;
+  }
+  .cta a.btn:hover { background:#00234a; }
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/">&larr; All Options</a>
+  <span class="title">Option A — Conference Classic</span>
+  <a href="/option-b">Next: Option B &rarr;</a>
+</div>
+<div class="wrap">
+  <h2>Our Sponsors</h2>
+  <p class="sub">The Agentic AI Summit 2026 is made possible by the generous support of our sponsors.</p>
+
+  {% for tier_name in ['platinum','gold','silver','bronze'] %}
+  <div class="tier tier--{{ tier_name }}">
+    <div class="tier-head"><span>{{ tier_name | capitalize }}</span><hr></div>
+    <div class="logos">
+      {% for s in sponsors[tier_name] %}
+      <a href="{{ s.url }}" class="logo" target="_blank">{{ s.name }}</a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="cta">
+    <p>Interested in sponsoring the Agentic AI Summit 2026?</p>
+    <a href="#" class="btn">Become a Sponsor</a>
+  </div>
+</div>
+</body>
+</html>
