@@ -15,20 +15,24 @@
   .wrap { max-width:860px; margin:0 auto; padding:44px 24px 48px; }
   h2 { font-size:15px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#003262; text-align:center; margin-bottom:32px; }
   h2::after { content:''; display:block; width:40px; height:2px; background:#fdb515; margin:10px auto 0; }
-  .tier { margin-bottom:20px; }
+  .tier { margin-bottom:22px; }
   .tier-tag { display:inline-block; font-size:10px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:#999; margin-bottom:10px; margin-left:4px; }
-  .logos { display:flex; flex-wrap:wrap; gap:4px; justify-content:center; align-items:center; }
-  .logo { display:inline-flex; align-items:center; justify-content:center; padding:6px 14px; margin:2px; text-decoration:none; border-radius:4px; transition:background 0.15s; }
+  .logos { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; align-items:center; }
+  .logo { display:inline-flex; align-items:center; justify-content:center; text-decoration:none; border-radius:4px; transition:background 0.15s; }
   .logo:hover { background:#eef1f5; }
   .logo img { object-fit:contain; }
   .logo .name-only { font-weight:600; }
-  .tier--platinum .logo img { height:28px; }
+  .tier--platinum .logo { padding:8px 16px; }
+  .tier--platinum .logo img { height:36px; }
   .tier--platinum .logo .name-only { font-size:16px; color:#222; }
-  .tier--gold .logo img { height:22px; }
+  .tier--gold .logo { padding:6px 14px; }
+  .tier--gold .logo img { height:28px; }
   .tier--gold .logo .name-only { font-size:14px; color:#222; }
-  .tier--silver .logo img { height:18px; }
+  .tier--silver .logo { padding:5px 12px; }
+  .tier--silver .logo img { height:22px; }
   .tier--silver .logo .name-only { font-size:12.5px; color:#444; }
-  .tier--bronze .logo img { height:15px; }
+  .tier--bronze .logo { padding:4px 10px; }
+  .tier--bronze .logo img { height:18px; }
   .tier--bronze .logo .name-only { font-size:11.5px; color:#666; }
   .divider { width:100%; height:1px; background:#e8e8e8; margin:4px 0; }
   .cta { text-align:center; margin-top:28px; padding-top:20px; border-top:1px solid #e0e0e0; }
@@ -52,8 +56,7 @@
       {% for s in sponsors[tier_name] %}
       <a href="{{ s.url }}" class="logo" target="_blank">
         {% if s.logo_dark %}
-        <img src="{{ s.logo_dark }}" alt="{{ s.name }}" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';">
-        <span class="name-only" style="display:none;">{{ s.name }}</span>
+        <img src="{{ s.logo_dark }}" alt="{{ s.name }}">
         {% else %}
         <span class="name-only">{{ s.name }}</span>
         {% endif %}

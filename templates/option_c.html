@@ -26,22 +26,22 @@
     display:inline-flex; align-items:center; justify-content:center;
     background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
     border-radius:10px; text-decoration:none; color:#d4d4d4; transition:all 0.2s;
+    padding:12px 20px;
   }
   .logo:hover { background:rgba(255,255,255,0.08); border-color:rgba(253,181,21,0.3); transform:translateY(-1px); box-shadow:0 4px 20px rgba(253,181,21,0.08); }
-  .logo img { object-fit:contain; transition:opacity 0.2s; }
-  .logo:hover img { opacity:0.9; }
-  .logo .name-only { font-weight:600; text-align:center; }
-  .tier--platinum .logo { padding:14px 28px; min-width:160px; }
-  .tier--platinum .logo img { height:30px; }
+  .logo img { object-fit:contain; }
+  .logo .name-only { font-weight:600; text-align:center; color:#d4d4d4; }
+  .tier--platinum .logo { min-width:170px; height:68px; }
+  .tier--platinum .logo img { height:36px; }
   .tier--platinum .logo .name-only { font-size:16px; }
-  .tier--gold .logo { padding:10px 22px; min-width:130px; }
-  .tier--gold .logo img { height:24px; }
+  .tier--gold .logo { min-width:150px; height:58px; }
+  .tier--gold .logo img { height:28px; }
   .tier--gold .logo .name-only { font-size:14px; }
-  .tier--silver .logo { padding:8px 18px; }
-  .tier--silver .logo img { height:18px; }
+  .tier--silver .logo { height:48px; }
+  .tier--silver .logo img { height:22px; }
   .tier--silver .logo .name-only { font-size:12.5px; }
-  .tier--bronze .logo { padding:7px 16px; }
-  .tier--bronze .logo img { height:15px; }
+  .tier--bronze .logo { height:42px; }
+  .tier--bronze .logo img { height:18px; }
   .tier--bronze .logo .name-only { font-size:11.5px; }
   .cta { text-align:center; margin-top:36px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.06); }
   .cta p { color:#5a5f6e; font-size:13px; margin-bottom:14px; }
@@ -65,8 +65,7 @@
       {% for s in sponsors[tier_name] %}
       <a href="{{ s.url }}" class="logo" target="_blank">
         {% if s.logo_light %}
-        <img src="{{ s.logo_light }}" alt="{{ s.name }}" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';">
-        <span class="name-only" style="display:none;">{{ s.name }}</span>
+        <img src="{{ s.logo_light }}" alt="{{ s.name }}">
         {% else %}
         <span class="name-only">{{ s.name }}</span>
         {% endif %}
