@@ -14,7 +14,7 @@ SPONSORS = {
         {"name": "Lambda", "url": "https://lambda.ai/", "logo_dark": "/static/logos/lambda-dark.png", "logo_light": "/static/logos/lambda-dark.png"},
         {"name": "Ema", "url": "https://www.ema.ai/", "logo_dark": "/static/logos/ema-dark.png", "logo_light": "/static/logos/ema-transparent.png"},
         {"name": "Replit", "url": "https://replit.com/", "logo_dark": "/static/logos/replit-dark.png", "logo_light": "/static/logos/replit-light.png"},
-        {"name": "E2B", "url": "https://e2b.dev/", "logo_dark": "/static/logos/e2b-dark.png", "logo_light": "/static/logos/e2b-light.png"},
+        {"name": "E2B", "url": "https://e2b.dev/", "logo_dark": "", "logo_light": ""},
         {"name": "SAP", "url": "https://www.sap.com/", "logo_dark": "/static/logos/sap-dark.png", "logo_light": "/static/logos/sap-light.png"},
         {"name": "AMD", "url": "https://www.amd.com/", "logo_dark": "/static/logos/amd-dark.png", "logo_light": "/static/logos/amd-dark.png"},
     ],
