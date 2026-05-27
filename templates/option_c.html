@@ -8,74 +8,44 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'DM Sans', sans-serif; background:#0c0f1a; color:#e0e0e0; }
-
   .nav { display:flex; align-items:center; justify-content:space-between; padding:12px 24px; background:#080a12; border-bottom:1px solid rgba(255,255,255,0.06); }
   .nav a { color:#aaa; text-decoration:none; font-size:13px; font-weight:600; }
   .nav a:hover { color:#fff; }
   .nav .title { color:#fdb515; font-size:14px; font-weight:700; }
-
   .wrap { max-width:900px; margin:0 auto; padding:52px 24px 56px; }
   h2 { text-align:center; font-size:24px; font-weight:700; color:#fff; margin-bottom:4px; }
   .sub { text-align:center; color:#7a7f8e; font-size:13px; margin-bottom:36px; }
-
   .tier { margin-bottom:24px; }
-  .tier-badge {
-    display:inline-block;
-    font-size:10px; font-weight:700; letter-spacing:2px;
-    text-transform:uppercase;
-    padding:4px 12px; border-radius:20px;
-    margin-bottom:12px;
-  }
+  .tier-badge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:4px 12px; border-radius:20px; margin-bottom:12px; }
   .tier--platinum .tier-badge { background:rgba(168,162,200,0.15); color:#b0aad0; border:1px solid rgba(168,162,200,0.25); }
   .tier--gold .tier-badge { background:rgba(253,181,21,0.1); color:#fdb515; border:1px solid rgba(253,181,21,0.2); }
   .tier--silver .tier-badge { background:rgba(160,170,180,0.1); color:#8a95a5; border:1px solid rgba(160,170,180,0.2); }
   .tier--bronze .tier-badge { background:rgba(180,120,60,0.1); color:#c49050; border:1px solid rgba(180,120,60,0.2); }
-
   .logos { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
   .logo {
     display:inline-flex; align-items:center; justify-content:center;
-    background:rgba(255,255,255,0.04);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:10px;
-    text-decoration:none; color:#d4d4d4;
-    transition:all 0.2s;
+    background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+    border-radius:10px; text-decoration:none; color:#d4d4d4; transition:all 0.2s;
   }
-  .logo:hover {
-    background:rgba(255,255,255,0.08);
-    border-color:rgba(253,181,21,0.3);
-    transform:translateY(-1px);
-    box-shadow:0 4px 20px rgba(253,181,21,0.08);
-  }
+  .logo:hover { background:rgba(255,255,255,0.08); border-color:rgba(253,181,21,0.3); transform:translateY(-1px); box-shadow:0 4px 20px rgba(253,181,21,0.08); }
   .logo img { object-fit:contain; filter:brightness(0) invert(0.85); transition:filter 0.2s; }
   .logo:hover img { filter:brightness(0) invert(1); }
-  .logo .fallback { font-weight:600; text-align:center; }
-
+  .logo .name-only { font-weight:600; text-align:center; }
   .tier--platinum .logo { padding:14px 28px; min-width:160px; }
   .tier--platinum .logo img { height:30px; }
-  .tier--platinum .logo .fallback { font-size:16px; }
+  .tier--platinum .logo .name-only { font-size:16px; }
   .tier--gold .logo { padding:10px 22px; min-width:130px; }
   .tier--gold .logo img { height:24px; }
-  .tier--gold .logo .fallback { font-size:14px; }
+  .tier--gold .logo .name-only { font-size:14px; }
   .tier--silver .logo { padding:8px 18px; }
   .tier--silver .logo img { height:18px; }
-  .tier--silver .logo .fallback { font-size:12.5px; }
+  .tier--silver .logo .name-only { font-size:12.5px; }
   .tier--bronze .logo { padding:7px 16px; }
   .tier--bronze .logo img { height:15px; }
-  .tier--bronze .logo .fallback { font-size:11.5px; }
-
-  .cta {
-    text-align:center; margin-top:36px;
-    padding-top:28px;
-    border-top:1px solid rgba(255,255,255,0.06);
-  }
+  .tier--bronze .logo .name-only { font-size:11.5px; }
+  .cta { text-align:center; margin-top:36px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.06); }
   .cta p { color:#5a5f6e; font-size:13px; margin-bottom:14px; }
-  .cta a {
-    display:inline-block;
-    background:linear-gradient(135deg, #fdb515, #f59e0b);
-    color:#0c0f1a; font-weight:700; font-size:13px;
-    padding:10px 28px; border-radius:8px;
-    text-decoration:none; transition:opacity 0.2s;
-  }
+  .cta a { display:inline-block; background:linear-gradient(135deg, #fdb515, #f59e0b); color:#0c0f1a; font-weight:700; font-size:13px; padding:10px 28px; border-radius:8px; text-decoration:none; }
   .cta a:hover { opacity:0.9; }
 </style>
 </head>
@@ -88,21 +58,23 @@
 <div class="wrap">
   <h2>Summit Sponsors</h2>
   <p class="sub">Powering the future of agentic AI</p>
-
   {% for tier_name in ['platinum','gold','silver','bronze'] %}
   <div class="tier tier--{{ tier_name }}">
     <div class="tier-badge">{{ tier_name | capitalize }}</div>
     <div class="logos">
       {% for s in sponsors[tier_name] %}
       <a href="{{ s.url }}" class="logo" target="_blank">
+        {% if s.logo %}
         <img src="{{ s.logo }}" alt="{{ s.name }}" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';">
-        <span class="fallback" style="display:none;">{{ s.name }}</span>
+        <span class="name-only" style="display:none;">{{ s.name }}</span>
+        {% else %}
+        <span class="name-only">{{ s.name }}</span>
+        {% endif %}
       </a>
       {% endfor %}
     </div>
   </div>
   {% endfor %}
-
   <div class="cta">
     <p>Interested in supporting the Agentic AI Summit?</p>
     <a href="#">Become a Sponsor</a>
