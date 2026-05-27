@@ -3,36 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Option A — Conference Classic</title>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Option A — Conference Cards</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: 'Source Sans Pro', sans-serif; background: #fff; color: #1a1a2e; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: #fff; color: #222; }
   .nav { display:flex; align-items:center; justify-content:space-between; padding:12px 24px; background:#003262; }
   .nav a { color:#fff; text-decoration:none; font-size:13px; font-weight:600; opacity:0.8; }
   .nav a:hover { opacity:1; }
   .nav .title { color:#fdb515; font-size:14px; font-weight:700; }
-  .wrap { max-width:1000px; margin:0 auto; padding:48px 24px 52px; }
-  h2 { text-align:center; font-size:26px; font-weight:700; color:#003262; margin-bottom:6px; }
-  .sub { text-align:center; color:#666; font-size:14px; margin-bottom:40px; }
-  .tier { margin-bottom:24px; }
-  .tier-head { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
-  .tier-head span { font-size:11px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; white-space:nowrap; }
-  .tier-head hr { flex:1; border:none; border-top:1px solid #e0e0e0; }
-  .tier--platinum .tier-head span { color:#6b7280; }
-  .tier--gold .tier-head span { color:#b8860b; }
-  .tier--silver .tier-head span { color:#71717a; }
-  .tier--bronze .tier-head span { color:#92400e; }
-  .logos { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; align-items:center; }
+
+  .wrap { max-width:1000px; margin:0 auto; padding:56px 24px 60px; }
+
+  .section-title {
+    text-align:center; font-size:28px; font-weight:700; color:#003262;
+    margin-bottom:6px;
+  }
+  .section-sub {
+    text-align:center; color:#666; font-size:15px; margin-bottom:44px;
+  }
+
+  .tier { margin-bottom:32px; }
+  .tier-label {
+    font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+    color:#003262; margin-bottom:14px; padding-bottom:6px;
+    border-bottom:2px solid #fdb515; display:inline-block;
+  }
+  .logos { display:flex; flex-wrap:wrap; justify-content:flex-start; gap:10px; }
   .logo {
     display:flex; align-items:center; justify-content:center;
-    background:#fff; border:1px solid #e2e5ea; border-radius:8px;
+    background:#fff; border:1px solid #e2e5ea; border-radius:10px;
     text-decoration:none; color:#1a1a2e;
-    transition: box-shadow 0.2s, transform 0.15s;
+    transition: box-shadow 0.2s, transform 0.15s, border-color 0.2s;
   }
-  .logo:hover { box-shadow:0 4px 14px rgba(0,0,0,0.07); transform:translateY(-1px); }
+  .logo:hover { box-shadow:0 6px 20px rgba(0,50,98,0.08); transform:translateY(-2px); border-color:#003262; }
   .logo img { max-width:88%; max-height:65%; object-fit:contain; }
-  .logo .name-only { font-weight:700; text-align:center; line-height:1.2; }
+  .logo .name-only { font-weight:700; text-align:center; line-height:1.2; color:#003262; }
 
   .tier--platinum .logo { width:200px; height:80px; padding:6px; }
   .tier--platinum .logo .name-only { font-size:18px; }
@@ -43,24 +48,32 @@
   .tier--bronze .logo { width:140px; height:55px; padding:5px; }
   .tier--bronze .logo .name-only { font-size:12px; }
 
-  .cta { text-align:center; margin-top:32px; padding-top:24px; border-top:1px solid #e2e5ea; }
-  .cta p { color:#666; font-size:14px; margin-bottom:12px; }
-  .cta a.btn { display:inline-block; background:#003262; color:#fff; font-weight:600; font-size:13px; padding:10px 26px; border-radius:6px; text-decoration:none; }
-  .cta a.btn:hover { background:#00234a; }
+  .cta {
+    text-align:center; margin-top:40px; padding-top:28px;
+    border-top:1px solid #e2e5ea;
+  }
+  .cta p { color:#666; font-size:14px; margin-bottom:14px; }
+  .cta a.btn {
+    display:inline-block; background:#003262; color:#fff;
+    font-weight:600; font-size:14px; padding:12px 32px;
+    border-radius:8px; text-decoration:none; transition:background 0.2s;
+  }
+  .cta a.btn:hover { background:#001d45; }
 </style>
 </head>
 <body>
 <div class="nav">
   <a href="/">&larr; All Options</a>
-  <span class="title">Option A — Conference Classic</span>
+  <span class="title">Option A — Conference Cards</span>
   <a href="/option-b">Next: Option B &rarr;</a>
 </div>
 <div class="wrap">
-  <h2>Our Sponsors</h2>
-  <p class="sub">The Agentic AI Summit 2026 is made possible by the generous support of our sponsors.</p>
+  <h2 class="section-title">Our Sponsors</h2>
+  <p class="section-sub">The Agentic AI Summit 2026 is made possible by the generous support of our sponsors.</p>
+
   {% for tier_name in ['platinum','gold','silver','bronze'] %}
   <div class="tier tier--{{ tier_name }}">
-    <div class="tier-head"><span>{{ tier_name | capitalize }}</span><hr></div>
+    <div class="tier-label">{{ tier_name | capitalize }}</div>
     <div class="logos">
       {% for s in sponsors[tier_name] %}
       <a href="{{ s.url }}" class="logo" target="_blank">
@@ -74,6 +87,7 @@
     </div>
   </div>
   {% endfor %}
+
   <div class="cta">
     <p>Interested in sponsoring the Agentic AI Summit 2026?</p>
     <a href="#" class="btn">Become a Sponsor</a>

@@ -50,10 +50,6 @@ async def option_a(request: Request):
 async def option_b(request: Request):
     return templates.TemplateResponse(request=request, name="option_b.html", context={"sponsors": SPONSORS})
 
-@app.get("/option-c", response_class=HTMLResponse)
-async def option_c(request: Request):
-    return templates.TemplateResponse(request=request, name="option_c.html", context={"sponsors": SPONSORS})
-
 if __name__ == "__main__":
     import uvicorn
     port = int(os.environ.get("PORT", 8000))
