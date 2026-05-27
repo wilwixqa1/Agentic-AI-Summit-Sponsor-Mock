@@ -15,8 +15,6 @@ SPONSORS = {
         {"name": "Ema", "url": "https://www.ema.ai/", "logo_dark": "/static/logos/ema-dark.png", "logo_light": "/static/logos/ema-transparent.png"},
         {"name": "Replit", "url": "https://replit.com/", "logo_dark": "/static/logos/replit-dark.png", "logo_light": "/static/logos/replit-light.png"},
         {"name": "E2B", "url": "https://e2b.dev/", "logo_dark": "/static/logos/e2b-dark.png", "logo_light": "/static/logos/e2b-light.png"},
-        {"name": "SAP", "url": "https://www.sap.com/", "logo_dark": "/static/logos/sap-dark.png", "logo_light": "/static/logos/sap-light.png"},
-        {"name": "AMD", "url": "https://www.amd.com/", "logo_dark": "/static/logos/amd-dark.png", "logo_light": "/static/logos/amd-dark.png"},
     ],
     "gold": [
         {"name": "Snorkel AI", "url": "https://snorkel.ai/", "logo_dark": "/static/logos/snorkel-dark.png", "logo_light": "/static/logos/snorkel-light.png"},
@@ -26,10 +24,6 @@ SPONSORS = {
     "silver": [
         {"name": "Samsung NEXT", "url": "https://www.samsungnext.com/", "logo_dark": "/static/logos/samsung-next-dark.png", "logo_light": "/static/logos/samsung-next-light.png"},
         {"name": "McKinsey", "url": "https://www.mckinsey.com/", "logo_dark": "/static/logos/mckinsey-dark.png", "logo_light": "/static/logos/mckinsey-dark.png"},
-        {"name": "vijil.ai", "url": "https://vijil.ai/", "logo_dark": "/static/logos/vijil-dark.png", "logo_light": "/static/logos/vijil-dark.png"},
-        {"name": "OutSystems", "url": "https://www.outsystems.com/", "logo_dark": "/static/logos/outsystems-dark.svg", "logo_light": "/static/logos/outsystems-light.svg"},
-        {"name": "Vessl", "url": "https://vessl.ai/", "logo_dark": "/static/logos/vessl-dark.png", "logo_light": "/static/logos/vessl-light.png"},
-        {"name": "Akash", "url": "https://akash.network/", "logo_dark": "/static/logos/akash-dark.png", "logo_light": "/static/logos/akash-light.png"},
     ],
     "bronze": [
         {"name": "Fastino.ai", "url": "#", "logo_dark": "/static/logos/fastino-dark.png", "logo_light": "/static/logos/fastino-light.png"},
