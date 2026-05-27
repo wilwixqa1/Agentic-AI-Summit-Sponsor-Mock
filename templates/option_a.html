@@ -23,7 +23,7 @@
   .tier--gold .tier-head span { color:#b8860b; }
   .tier--silver .tier-head span { color:#71717a; }
   .tier--bronze .tier-head span { color:#92400e; }
-  .logos { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; }
+  .logos { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; align-items:center; }
   .logo {
     display:flex; align-items:center; justify-content:center;
     background:#fff; border:1px solid #e2e5ea; border-radius:8px;
@@ -31,16 +31,29 @@
     transition: box-shadow 0.2s, transform 0.15s;
   }
   .logo:hover { box-shadow:0 4px 14px rgba(0,0,0,0.07); transform:translateY(-1px); }
-  .logo img { max-width:92%; max-height:85%; object-fit:contain; }
+  .logo img { object-fit:contain; }
   .logo .name-only { font-weight:700; text-align:center; line-height:1.2; }
-  .tier--platinum .logo { width:210px; height:90px; padding:4px 6px; }
+
+  /* Platinum: fixed height, flexible width, logo height drives sizing */
+  .tier--platinum .logo { height:70px; padding:10px 24px; }
+  .tier--platinum .logo img { height:42px; }
   .tier--platinum .logo .name-only { font-size:18px; }
-  .tier--gold .logo { width:200px; height:80px; padding:4px 6px; }
+
+  /* Gold */
+  .tier--gold .logo { height:62px; padding:8px 20px; }
+  .tier--gold .logo img { height:36px; }
   .tier--gold .logo .name-only { font-size:16px; }
-  .tier--silver .logo { width:160px; height:65px; padding:3px 5px; }
+
+  /* Silver */
+  .tier--silver .logo { height:52px; padding:6px 16px; }
+  .tier--silver .logo img { height:30px; }
   .tier--silver .logo .name-only { font-size:13px; }
-  .tier--bronze .logo { width:145px; height:58px; padding:3px 5px; }
+
+  /* Bronze */
+  .tier--bronze .logo { height:46px; padding:6px 14px; }
+  .tier--bronze .logo img { height:26px; }
   .tier--bronze .logo .name-only { font-size:12px; }
+
   .cta { text-align:center; margin-top:32px; padding-top:24px; border-top:1px solid #e2e5ea; }
   .cta p { color:#666; font-size:14px; margin-bottom:12px; }
   .cta a.btn { display:inline-block; background:#003262; color:#fff; font-weight:600; font-size:13px; padding:10px 26px; border-radius:6px; text-decoration:none; }
