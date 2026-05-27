@@ -12,53 +12,49 @@
   .nav a:hover { opacity:1; }
   .nav .title { color:#fdb515; font-size:14px; font-weight:700; }
 
-  /* Banner with sponsors below */
-  .banner-img {
-    width:100%;
-    display:block;
-  }
+  .banner img { width:100%; display:block; }
 
-  .sponsors-section {
+  .sponsors {
     max-width:1000px; margin:0 auto;
-    padding:48px 24px 56px;
-    text-align:center;
+    padding:56px 24px 64px;
   }
-  .sponsors-section h2 {
-    font-size:28px; font-weight:700; color:#003262; margin-bottom:6px;
+  .sponsors h2 {
+    text-align:center; font-size:28px; font-weight:700; color:#003262;
+    margin-bottom:6px;
   }
-  .sponsors-section .sub {
-    font-size:15px; color:#666; margin-bottom:40px;
+  .sponsors .sub {
+    text-align:center; font-size:15px; color:#888; margin-bottom:48px;
   }
 
-  .tier { margin-bottom:24px; }
+  .tier { margin-bottom:28px; text-align:center; }
   .tier-label {
     font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase;
-    color:#999; margin-bottom:12px;
+    color:#aaa; margin-bottom:14px;
   }
-  .logos { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; align-items:center; }
+  .logos { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; align-items:center; }
   .logo {
     display:inline-flex; align-items:center; justify-content:center;
-    text-decoration:none; border-radius:6px; transition:opacity 0.15s;
-    padding:8px 16px;
+    text-decoration:none; padding:8px 18px; border-radius:6px;
+    transition:opacity 0.15s;
   }
-  .logo:hover { opacity:0.65; }
+  .logo:hover { opacity:0.6; }
   .logo img { object-fit:contain; mix-blend-mode:multiply; }
   .logo .name-only { font-weight:600; color:#003262; }
 
-  .tier--platinum .logo img { height:48px; }
-  .tier--platinum .logo .name-only { font-size:18px; }
-  .tier--gold .logo img { height:40px; }
+  .tier--platinum .logo img { height:50px; }
+  .tier--platinum .logo .name-only { font-size:20px; }
+  .tier--gold .logo img { height:42px; }
   .tier--gold .logo .name-only { font-size:16px; }
   .tier--silver .logo img { height:30px; }
   .tier--silver .logo .name-only { font-size:13px; }
   .tier--bronze .logo img { height:24px; }
   .tier--bronze .logo .name-only { font-size:12px; }
 
-  .divider { width:80%; margin:6px auto; height:1px; background:#eaeaea; }
+  .divider { width:60%; margin:8px auto; height:1px; background:#eaeaea; }
 
   .cta {
-    text-align:center; margin-top:36px; padding-top:24px;
-    border-top:1px solid #e2e5ea;
+    text-align:center; margin-top:48px; padding-top:32px;
+    border-top:1px solid #e8eaed;
   }
   .cta a {
     display:inline-block; color:#003262; font-weight:600;
@@ -75,9 +71,11 @@
   <a href="/">All Options</a>
 </div>
 
-<img src="/static/summit-banner.png" alt="Agentic AI Summit 2026" class="banner-img">
+<div class="banner">
+  <img src="/static/summit-banner.png" alt="Agentic AI Summit 2026 — Aug 1-2 @ UC Berkeley">
+</div>
 
-<div class="sponsors-section">
+<div class="sponsors">
   <h2>Our Sponsors</h2>
   <p class="sub">The Agentic AI Summit 2026 is made possible by the generous support of our sponsors.</p>
 

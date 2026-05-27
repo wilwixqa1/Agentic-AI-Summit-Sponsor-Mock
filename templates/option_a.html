@@ -12,74 +12,62 @@
   .nav a:hover { opacity:1; }
   .nav .title { color:#fdb515; font-size:14px; font-weight:700; }
 
-  /* Banner */
-  .banner {
-    width:100%;
-    background: url('/static/summit-banner.png') center/cover no-repeat;
-    padding:80px 24px 60px;
-    text-align:center;
-    position:relative;
+  .banner img { width:100%; display:block; }
+
+  .sponsors {
+    max-width:1000px; margin:0 auto;
+    padding:56px 24px 64px;
+  }
+  .sponsors h2 {
+    text-align:center; font-size:28px; font-weight:700; color:#003262;
+    margin-bottom:6px;
+  }
+  .sponsors .sub {
+    text-align:center; font-size:15px; color:#888; margin-bottom:48px;
   }
 
-  /* Sponsor overlay on banner */
-  .banner-sponsors {
-    max-width:900px;
-    margin:0 auto;
-    padding:28px 32px 24px;
-    background:rgba(255,255,255,0.92);
-    backdrop-filter:blur(12px);
-    -webkit-backdrop-filter:blur(12px);
-    border-radius:16px;
-    box-shadow:0 8px 32px rgba(0,0,0,0.1);
-  }
-  .banner-sponsors h2 {
-    font-size:22px; font-weight:700; color:#003262;
-    margin-bottom:4px;
-  }
-  .banner-sponsors .sub {
-    font-size:13px; color:#666; margin-bottom:24px;
-  }
-
-  .tier { margin-bottom:18px; }
-  .tier:last-of-type { margin-bottom:0; }
+  .tier { margin-bottom:36px; text-align:center; }
   .tier-label {
-    font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
-    color:#003262; margin-bottom:10px; text-align:center;
+    font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+    color:#003262; margin-bottom:16px;
   }
-  .tier-label span {
-    border-bottom:2px solid #fdb515; padding-bottom:3px;
-  }
-  .logos { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; }
+  .tier-label span { border-bottom:2px solid #fdb515; padding-bottom:4px; }
+
+  .logos { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; }
   .logo {
     display:flex; align-items:center; justify-content:center;
-    background:#fff; border:1px solid #e8eaed; border-radius:8px;
-    text-decoration:none; color:#1a1a2e;
-    transition: box-shadow 0.2s, transform 0.15s, border-color 0.2s;
+    background:#fff; border:1px solid #e8eaed; border-radius:10px;
+    text-decoration:none; color:#003262;
+    transition: box-shadow 0.25s, transform 0.2s, border-color 0.25s;
   }
-  .logo:hover { box-shadow:0 4px 16px rgba(0,50,98,0.1); transform:translateY(-1px); border-color:#003262; }
+  .logo:hover {
+    box-shadow:0 6px 24px rgba(0,50,98,0.1);
+    transform:translateY(-2px);
+    border-color:#003262;
+  }
   .logo img { max-width:88%; max-height:65%; object-fit:contain; }
-  .logo .name-only { font-weight:700; text-align:center; line-height:1.2; color:#003262; }
+  .logo .name-only { font-weight:700; text-align:center; }
 
-  .tier--platinum .logo { width:180px; height:70px; padding:5px; }
-  .tier--platinum .logo .name-only { font-size:16px; }
-  .tier--gold .logo { width:170px; height:65px; padding:5px; }
-  .tier--gold .logo .name-only { font-size:14px; }
-  .tier--silver .logo { width:130px; height:50px; padding:4px; }
-  .tier--silver .logo .name-only { font-size:11px; }
-  .tier--bronze .logo { width:120px; height:45px; padding:4px; }
-  .tier--bronze .logo .name-only { font-size:10px; }
+  .tier--platinum .logo { width:200px; height:80px; padding:6px; }
+  .tier--platinum .logo .name-only { font-size:17px; }
+  .tier--gold .logo { width:200px; height:76px; padding:6px; }
+  .tier--gold .logo .name-only { font-size:15px; }
+  .tier--silver .logo { width:140px; height:56px; padding:4px; }
+  .tier--silver .logo .name-only { font-size:12px; }
+  .tier--bronze .logo { width:135px; height:52px; padding:4px; }
+  .tier--bronze .logo .name-only { font-size:11px; }
 
-  .tier-divider { width:60%; margin:12px auto; height:1px; background:#e8eaed; }
-
-  .cta-row {
-    text-align:center; margin-top:16px; padding-top:14px;
+  .cta {
+    text-align:center; margin-top:48px; padding-top:32px;
     border-top:1px solid #e8eaed;
   }
-  .cta-row a {
-    color:#003262; font-weight:600; font-size:13px; text-decoration:none;
-    border-bottom:2px solid #fdb515; padding-bottom:2px;
+  .cta p { color:#888; font-size:15px; margin-bottom:16px; }
+  .cta a {
+    display:inline-block; background:#003262; color:#fff;
+    font-weight:600; font-size:14px; padding:14px 36px;
+    border-radius:8px; text-decoration:none; transition:background 0.2s;
   }
-  .cta-row a:hover { color:#001d45; }
+  .cta a:hover { background:#001d45; }
 </style>
 </head>
 <body>
@@ -90,31 +78,33 @@
 </div>
 
 <div class="banner">
-  <div class="banner-sponsors">
-    <h2>Our Sponsors</h2>
-    <p class="sub">The Agentic AI Summit 2026 is made possible by the generous support of our sponsors.</p>
+  <img src="/static/summit-banner.png" alt="Agentic AI Summit 2026 — Aug 1-2 @ UC Berkeley">
+</div>
 
-    {% for tier_name in ['platinum','gold','silver','bronze'] %}
-    {% if not loop.first %}<div class="tier-divider"></div>{% endif %}
-    <div class="tier tier--{{ tier_name }}">
-      <div class="tier-label"><span>{{ tier_name | capitalize }}</span></div>
-      <div class="logos">
-        {% for s in sponsors[tier_name] %}
-        <a href="{{ s.url }}" class="logo" target="_blank">
-          {% if s.logo_dark %}
-          <img src="{{ s.logo_dark }}" alt="{{ s.name }}">
-          {% else %}
-          <span class="name-only">{{ s.name }}</span>
-          {% endif %}
-        </a>
-        {% endfor %}
-      </div>
-    </div>
-    {% endfor %}
+<div class="sponsors">
+  <h2>Our Sponsors</h2>
+  <p class="sub">The Agentic AI Summit 2026 is made possible by the generous support of our sponsors.</p>
 
-    <div class="cta-row">
-      <a href="#">Become a Sponsor &rarr;</a>
+  {% for tier_name in ['platinum','gold','silver','bronze'] %}
+  <div class="tier tier--{{ tier_name }}">
+    <div class="tier-label"><span>{{ tier_name | capitalize }}</span></div>
+    <div class="logos">
+      {% for s in sponsors[tier_name] %}
+      <a href="{{ s.url }}" class="logo" target="_blank">
+        {% if s.logo_dark %}
+        <img src="{{ s.logo_dark }}" alt="{{ s.name }}">
+        {% else %}
+        <span class="name-only">{{ s.name }}</span>
+        {% endif %}
+      </a>
+      {% endfor %}
     </div>
+  </div>
+  {% endfor %}
+
+  <div class="cta">
+    <p>Interested in sponsoring the Agentic AI Summit 2026?</p>
+    <a href="#">Become a Sponsor</a>
   </div>
 </div>
 </body>
