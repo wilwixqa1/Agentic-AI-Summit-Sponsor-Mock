@@ -63,7 +63,7 @@
       {% for s in sponsors[tier_name] %}
       <a href="{{ s.url }}" class="logo" target="_blank">
         {% if s.logo %}
-        <img src="{{ s.logo }}" alt="{{ s.name }}" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+        <img src="{{ s.logo_dark }}" alt="{{ s.name }}" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
         <span class="name-only" style="display:none;">{{ s.name }}</span>
         {% else %}
         <span class="name-only">{{ s.name }}</span>
