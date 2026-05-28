@@ -11,24 +11,24 @@ templates = Jinja2Templates(directory="templates")
 SPONSORS = {
     "platinum": [
         {"name": "Daytona", "url": "https://www.daytona.io/", "logo_dark": "/static/logos/daytona-dark.svg", "logo_light": "/static/logos/daytona-light.svg"},
-        {"name": "Lambda", "url": "https://lambda.ai/", "logo_dark": "/static/logos/lambda-dark.png", "logo_light": "/static/logos/lambda-dark.png"},
-        {"name": "Ema", "url": "https://www.ema.ai/", "logo_dark": "/static/logos/ema-dark.png", "logo_light": "/static/logos/ema-transparent.png"},
-        {"name": "Replit", "url": "https://replit.com/", "logo_dark": "/static/logos/replit-dark.png", "logo_light": "/static/logos/replit-light.png"},
         {"name": "E2B", "url": "https://e2b.dev/", "logo_dark": "/static/logos/e2b-dark.png", "logo_light": "/static/logos/e2b-light.png"},
+        {"name": "Ema", "url": "https://www.ema.ai/", "logo_dark": "/static/logos/ema-dark.png", "logo_light": "/static/logos/ema-transparent.png"},
+        {"name": "Lambda", "url": "https://lambda.ai/", "logo_dark": "/static/logos/lambda-dark.png", "logo_light": "/static/logos/lambda-dark.png"},
+        {"name": "Replit", "url": "https://replit.com/", "logo_dark": "/static/logos/replit-dark.png", "logo_light": "/static/logos/replit-light.png"},
     ],
     "gold": [
-        {"name": "Snorkel AI", "url": "https://snorkel.ai/", "logo_dark": "/static/logos/snorkel-dark.png", "logo_light": "/static/logos/snorkel-light.png"},
-        {"name": "Nebius", "url": "https://nebius.com/", "logo_dark": "/static/logos/nebius-dark.png", "logo_light": "/static/logos/nebius-light.png"},
         {"name": "Databricks", "url": "https://www.databricks.com/", "logo_dark": "/static/logos/databricks-dark.png", "logo_light": "/static/logos/databricks-light.png"},
+        {"name": "Nebius", "url": "https://nebius.com/", "logo_dark": "/static/logos/nebius-dark.png", "logo_light": "/static/logos/nebius-light.png"},
+        {"name": "Snorkel AI", "url": "https://snorkel.ai/", "logo_dark": "/static/logos/snorkel-dark.png", "logo_light": "/static/logos/snorkel-light.png"},
     ],
     "silver": [
-        {"name": "Samsung NEXT", "url": "https://www.samsungnext.com/", "logo_dark": "/static/logos/samsung-next-dark.png", "logo_light": "/static/logos/samsung-next-light.png"},
         {"name": "McKinsey", "url": "https://www.mckinsey.com/", "logo_dark": "/static/logos/mckinsey-dark.png", "logo_light": "/static/logos/mckinsey-dark.png"},
+        {"name": "Samsung NEXT", "url": "https://www.samsungnext.com/", "logo_dark": "/static/logos/samsung-next-dark.png", "logo_light": "/static/logos/samsung-next-light.png"},
     ],
     "bronze": [
+        {"name": "Elastic", "url": "https://www.elastic.co/", "logo_dark": "/static/logos/elastic-dark.png", "logo_light": "/static/logos/elastic-light.png"},
         {"name": "Fastino.ai", "url": "#", "logo_dark": "/static/logos/fastino-dark.png", "logo_light": "/static/logos/fastino-light.png"},
         {"name": "Linux / PyTorch", "url": "https://pytorch.org/", "logo_dark": "/static/logos/pytorch-dark.png", "logo_light": "/static/logos/pytorch-dark.png"},
-        {"name": "Elastic", "url": "https://www.elastic.co/", "logo_dark": "/static/logos/elastic-dark.png", "logo_light": "/static/logos/elastic-light.png"},
     ],
 }
 
