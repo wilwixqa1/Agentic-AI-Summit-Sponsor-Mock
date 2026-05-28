@@ -1,111 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Option A — Conference Cards</title>
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background:#fff; color:#222; }
-  .nav { display:flex; align-items:center; justify-content:space-between; padding:12px 24px; background:#003262; }
-  .nav a { color:#fff; text-decoration:none; font-size:13px; font-weight:600; opacity:0.8; }
-  .nav a:hover { opacity:1; }
-  .nav .title { color:#fdb515; font-size:14px; font-weight:700; }
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Sponsor Section Preview — Agentic AI Summit 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Poppins', sans-serif; font-weight: 300; background: #fff; color: #222; }
 
-  .banner img { width:100%; display:block; }
+    .nav { display:flex; align-items:center; justify-content:space-between; padding:12px 24px; background:#003262; }
+    .nav a { color:#fff; text-decoration:none; font-size:13px; font-weight:600; opacity:0.8; }
+    .nav a:hover { opacity:1; }
+    .nav .title { color:#fdb515; font-size:14px; font-weight:700; }
 
-  .sponsors {
-    max-width:1000px; margin:0 auto;
-    padding:56px 24px 64px;
-  }
-  .sponsors h2 {
-    text-align:center; font-size:28px; font-weight:700; color:#003262;
-    margin-bottom:6px;
-  }
-  .sponsors .sub {
-    text-align:center; font-size:15px; color:#888; margin-bottom:48px;
-  }
+    /* Match RDI page margins */
+    .rdi-container {
+      margin-left: 17vw; margin-right: 17vw;
+      font-size: 12pt;
+    }
 
-  .tier { margin-bottom:36px; text-align:center; }
-  .tier-label {
-    font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
-    color:#003262; margin-bottom:16px;
-  }
-  .tier-label span { border-bottom:2px solid #fdb515; padding-bottom:4px; }
+    /* Context: simulating the speakers section above */
+    .context-above {
+      text-align: center;
+      padding: 40px 0 20px;
+      border-bottom: none;
+    }
+    .context-above h1 {
+      font-weight: 500; color: #CB9445; font-size: 40px;
+    }
+    .speakers-img {
+      width: 100%; height: auto; margin-bottom: 20px;
+    }
 
-  .logos { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; }
-  .logo {
-    display:flex; align-items:center; justify-content:center;
-    background:#fff; border:1px solid #e8eaed; border-radius:10px;
-    text-decoration:none; color:#003262;
-    transition: box-shadow 0.25s, transform 0.2s, border-color 0.25s;
-  }
-  .logo:hover {
-    box-shadow:0 6px 24px rgba(0,50,98,0.1);
-    transform:translateY(-2px);
-    border-color:#003262;
-  }
-  .logo img { max-width:88%; max-height:65%; object-fit:contain; }
-  .logo .name-only { font-weight:700; text-align:center; }
+    /* ========== SPONSOR SECTION (this is the code for the PR) ========== */
+    .sponsors-section {
+      padding: 40px 0 50px;
+    }
+    .sponsors-section h2 {
+      font-weight: 500; color: #CB9445; text-align: center;
+      font-size: 36px; margin-bottom: 8px;
+    }
+    .sponsors-section .sponsors-sub {
+      text-align: center; color: #666; font-size: 14px;
+      margin-bottom: 36px;
+    }
+    .sponsors-tier {
+      margin-bottom: 28px; text-align: center;
+    }
+    .sponsors-tier-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: #CB9445;
+      margin-bottom: 14px;
+    }
+    .sponsors-logos {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 12px; align-items: center;
+    }
+    .sponsors-logos a {
+      display: flex; align-items: center; justify-content: center;
+      background: #fff; border: 1px solid #e8eaed; border-radius: 10px;
+      text-decoration: none; color: #333;
+      transition: box-shadow 0.25s, transform 0.2s, border-color 0.25s;
+    }
+    .sponsors-logos a:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+      border-color: #CB9445;
+    }
+    .sponsors-logos a img {
+      max-width: 88%; max-height: 65%; object-fit: contain;
+    }
+    .sponsors-logos a .sponsor-name {
+      font-weight: 600; text-align: center;
+    }
+    /* Tier sizes */
+    .sponsors-tier--platinum .sponsors-logos a { width: 200px; height: 80px; padding: 6px; }
+    .sponsors-tier--platinum .sponsors-logos a .sponsor-name { font-size: 17px; }
+    .sponsors-tier--gold .sponsors-logos a { width: 190px; height: 74px; padding: 6px; }
+    .sponsors-tier--gold .sponsors-logos a .sponsor-name { font-size: 15px; }
+    .sponsors-tier--silver .sponsors-logos a { width: 160px; height: 60px; padding: 5px; }
+    .sponsors-tier--silver .sponsors-logos a .sponsor-name { font-size: 12px; }
+    .sponsors-tier--bronze .sponsors-logos a { width: 145px; height: 55px; padding: 5px; }
+    .sponsors-tier--bronze .sponsors-logos a .sponsor-name { font-size: 11px; }
 
-  .tier--platinum .logo { width:200px; height:80px; padding:6px; }
-  .tier--platinum .logo .name-only { font-size:17px; }
-  .tier--gold .logo { width:200px; height:76px; padding:6px; }
-  .tier--gold .logo .name-only { font-size:15px; }
-  .tier--silver .logo { width:140px; height:56px; padding:4px; }
-  .tier--silver .logo .name-only { font-size:12px; }
-  .tier--bronze .logo { width:135px; height:52px; padding:4px; }
-  .tier--bronze .logo .name-only { font-size:11px; }
+    .sponsors-cta {
+      text-align: center; margin-top: 36px; padding-top: 24px;
+    }
+    .sponsors-cta .styled-button {
+      padding: 12px 24px; border: solid 0.5px #30303060;
+      border-radius: 5px; cursor: pointer; transition: background-color 0.3s;
+      background-color: #CB9445; font-weight: bold; color: white;
+      font-size: 14px; font-family: 'Poppins', sans-serif;
+    }
+    .sponsors-cta .styled-button:hover { background-color: #b8832e; }
+    /* ========== END SPONSOR SECTION ========== */
 
-  .cta {
-    text-align:center; margin-top:48px; padding-top:32px;
-    border-top:1px solid #e8eaed;
-  }
-  .cta p { color:#888; font-size:15px; margin-bottom:16px; }
-  .cta a {
-    display:inline-block; background:#003262; color:#fff;
-    font-weight:600; font-size:14px; padding:14px 36px;
-    border-radius:8px; text-decoration:none; transition:background 0.2s;
-  }
-  .cta a:hover { background:#001d45; }
-</style>
+    /* Context: simulating community section below */
+    .context-below {
+      background: #1e3a5f; padding: 64px 24px; text-align: center; color: white;
+    }
+    .context-below h2 { font-size: 28px; font-weight: 700; margin-bottom: 16px; }
+    .context-below p { max-width: 700px; margin: 0 auto 24px; font-size: 15px; opacity: 0.9; }
+  </style>
 </head>
 <body>
 <div class="nav">
   <a href="/">&larr; All Options</a>
-  <span class="title">Option A — Conference Cards</span>
-  <a href="/option-b">Next: Option B &rarr;</a>
+  <span class="title">Preview: Sponsor section as it will appear on the RDI page</span>
+  <a href="/option-b">Option B &rarr;</a>
 </div>
 
-<div class="banner">
-  <img src="/static/summit-banner.png" alt="Agentic AI Summit 2026 — Aug 1-2 @ UC Berkeley">
-</div>
+<!-- Simulating the RDI page context above the sponsors -->
+<div class="rdi-container">
+  <div class="context-above">
+    <h1>Featured Speakers</h1>
+    <p style="color:#999; font-size:13px; margin-top:8px;">[ Speakers image would appear here ]</p>
+  </div>
 
-<div class="sponsors">
-  <h2>Our Sponsors</h2>
-  <p class="sub">The Agentic AI Summit 2026 is made possible by the generous support of our sponsors.</p>
+  <hr style="margin-left:-20%; margin-right:-20%; margin-bottom:0;">
 
-  {% for tier_name in ['platinum','gold','silver','bronze'] %}
-  <div class="tier tier--{{ tier_name }}">
-    <div class="tier-label"><span>{{ tier_name | capitalize }}</span></div>
-    <div class="logos">
-      {% for s in sponsors[tier_name] %}
-      <a href="{{ s.url }}" class="logo" target="_blank">
-        {% if s.logo_dark %}
-        <img src="{{ s.logo_dark }}" alt="{{ s.name }}">
-        {% else %}
-        <span class="name-only">{{ s.name }}</span>
-        {% endif %}
-      </a>
-      {% endfor %}
+  <!-- ========== SPONSOR SECTION START ========== -->
+  <div class="sponsors-section">
+    <h2>Our Sponsors</h2>
+    <p class="sponsors-sub">The Agentic AI Summit 2026 is made possible by the generous support of our sponsors.</p>
+
+    {% for tier_name, tier_sponsors in sponsors.items() %}
+    <div class="sponsors-tier sponsors-tier--{{ tier_name }}">
+      <div class="sponsors-tier-label">{{ tier_name | capitalize }}</div>
+      <div class="sponsors-logos">
+        {% for s in tier_sponsors %}
+        <a href="{{ s.url }}" target="_blank">
+          {% if s.logo_dark %}
+          <img src="{{ s.logo_dark }}" alt="{{ s.name }}">
+          {% else %}
+          <span class="sponsor-name">{{ s.name }}</span>
+          {% endif %}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="sponsors-cta">
+      <button class="styled-button" onclick="location.href='https://forms.gle/ZmfSDBVVXFhMvRAk8'">
+        Become a Sponsor
+      </button>
     </div>
   </div>
-  {% endfor %}
-
-  <div class="cta">
-    <p>Interested in sponsoring the Agentic AI Summit 2026?</p>
-    <a href="#">Become a Sponsor</a>
-  </div>
+  <!-- ========== SPONSOR SECTION END ========== -->
 </div>
+
+<!-- Simulating the community section below -->
+<div class="context-below">
+  <h2>Join Our Community</h2>
+  <p>We invite researchers, students, industry practitioners, innovators and entrepreneurs to collaborate with us in shaping the future of responsible AI and decentralized intelligence.</p>
+</div>
+
 </body>
 </html>
