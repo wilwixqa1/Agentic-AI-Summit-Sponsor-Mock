@@ -17,6 +17,7 @@ SPONSORS = {
         {"name": "Replit", "url": "https://replit.com/", "logo_dark": "/static/logos/replit-dark.png", "logo_light": "/static/logos/replit-light.png"},
     ],
     "gold": [
+        {"name": "Circle", "url": "https://www.circle.com/", "logo_dark": "/static/logos/circle-dark.png", "logo_light": "/static/logos/circle-dark.png"},
         {"name": "Databricks", "url": "https://www.databricks.com/", "logo_dark": "/static/logos/databricks-dark.png", "logo_light": "/static/logos/databricks-light.png"},
         {"name": "Nebius", "url": "https://nebius.com/", "logo_dark": "/static/logos/nebius-dark.png", "logo_light": "/static/logos/nebius-light.png"},
         {"name": "Snorkel AI", "url": "https://snorkel.ai/", "logo_dark": "/static/logos/snorkel-dark.png", "logo_light": "/static/logos/snorkel-light.png"},
@@ -24,11 +25,13 @@ SPONSORS = {
     "silver": [
         {"name": "McKinsey", "url": "https://www.mckinsey.com/", "logo_dark": "/static/logos/mckinsey-dark.png", "logo_light": "/static/logos/mckinsey-dark.png"},
         {"name": "Samsung NEXT", "url": "https://www.samsungnext.com/", "logo_dark": "/static/logos/samsung-next-dark.png", "logo_light": "/static/logos/samsung-next-light.png"},
+        {"name": "Vijil", "url": "https://vijil.ai/", "logo_dark": "/static/logos/vijil-dark.png", "logo_light": "/static/logos/vijil-light.png"},
     ],
     "bronze": [
         {"name": "Elastic", "url": "https://www.elastic.co/", "logo_dark": "/static/logos/elastic-dark.png", "logo_light": "/static/logos/elastic-light.png"},
         {"name": "Fastino.ai", "url": "#", "logo_dark": "/static/logos/fastino-dark.png", "logo_light": "/static/logos/fastino-light.png"},
         {"name": "Linux / PyTorch", "url": "https://pytorch.org/", "logo_dark": "/static/logos/pytorch-dark.png", "logo_light": "/static/logos/pytorch-dark.png"},
+        {"name": "Neo4j", "url": "https://neo4j.com/", "logo_dark": "/static/logos/neo4j-dark.png", "logo_light": "/static/logos/neo4j-light.png"},
     ],
 }
 
