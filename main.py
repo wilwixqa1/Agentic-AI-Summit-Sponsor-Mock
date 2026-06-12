@@ -24,6 +24,7 @@ SPONSORS = {
     ],
     "silver": [
         {"name": "McKinsey", "url": "https://www.mckinsey.com/", "logo_dark": "/static/logos/mckinsey-dark.png", "logo_light": "/static/logos/mckinsey-dark.png"},
+        {"name": "OutSystems", "url": "https://www.outsystems.com/", "logo_dark": "/static/logos/outsystems-dark.png", "logo_light": "/static/logos/outsystems-light.png"},
         {"name": "Samsung NEXT", "url": "https://www.samsungnext.com/", "logo_dark": "/static/logos/samsung-next-dark.png", "logo_light": "/static/logos/samsung-next-light.png"},
         {"name": "Vijil", "url": "https://vijil.ai/", "logo_dark": "/static/logos/vijil-dark.png", "logo_light": "/static/logos/vijil-light.png"},
     ],
